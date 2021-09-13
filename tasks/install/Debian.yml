@@ -3,7 +3,7 @@
     url: "{{ zerotier_gpg_url }}"
     id: "{{ zerotier_gpg_fingerprint }}"
 
-- name: Check if Ubuntu release has dedicated repo
+- name: Check if Ubuntu release has dedicated repo repo
   uri:
     url: "{{ zerotier_download_base_url }}/debian/{{ zerotier_deb_release_repo }}"
   failed_when: false
