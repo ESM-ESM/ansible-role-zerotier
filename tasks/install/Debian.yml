@@ -21,7 +21,7 @@
 
   when:
     - ansible_facts['distribution'] == "Ubuntu"
-    - ansible_facts['distribution_major_version'] == "18"
+    - ansible_facts['distribution_major_version'] == "18" or ansible_facts['distribution_major_version'] == "20"
     - release_repo.status == 404
 
 - name: Add ZeroTier APT repository
