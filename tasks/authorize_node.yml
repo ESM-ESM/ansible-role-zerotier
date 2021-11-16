@@ -31,6 +31,10 @@
       body_format: json
     register: conf_apiresult
     delegate_to: "{{ zerotier_api_delegate }}"
+    when:
+    - ansible_local['zerotier']['networks'][zerotier_network_id] is not defined or
+      ansible_local['zerotier']['networks'][zerotier_network_id]['status'] != 'OK'
+
 
   when:
   - not ansible_check_mode
